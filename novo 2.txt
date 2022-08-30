@@ -1,0 +1,30 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class AbstractAgenda<T> {
+
+
+	
+	 private ArrayList<T> agenda = new ArrayList<>(); 
+	 
+	
+	 
+	 public void adicionar(T agendas) {
+		
+		  agenda.add(agendas);
+	 }
+	 
+	 public void remover(T agendas) {
+		 
+		  agenda.remove(agendas);
+	 }
+	 
+	 public void listar(){ 
+		   for(int j = 0; j < agenda.size(); j++) {
+               System.out.println(agenda.get(j));
+           }
+	 }
+	 
+	
+}

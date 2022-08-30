@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class AgendaTarefa {
+
+	public static  void main(String[] args) {
+	
+		String tarefa;  
+		int opcao;
+		
+		
+		 AbstractAgenda<String> agenda = new AbstractAgenda<>();
+
+		 Scanner scan = new Scanner(System.in);
+       
+			do{
+	            System.out.println("Escolha uma opcao:");
+				System.out.println("1 = Listar\n2 = Adicionar\n3 = Excluir\n0 = Encerrar");
+	            opcao = scan.nextLine().charAt(0);
+				
+	            switch (opcao) {
+	                case '1':
+	                     agenda.listar();
+	                    
+						break;
+	                case '2':
+	                    System.out.println("\nAdicione uma tarefa:");
+						tarefa = scan.nextLine();
+	                  agenda.adicionar(tarefa);
+						break;
+						
+	                case '3':
+	                    System.out.println("\nExcluir tarefa:");
+						tarefa = scan.nextLine();
+	                     agenda.remover(tarefa);
+						break;
+                    case '0':
+                        System.out.println("Encerrando...");
+                        break;
+	                default:
+	                    System.out.println("ERROR!");
+						break;
+	           
+			}
+	    }while(opcao!='0');
+		
+			
+	}
+
+}
